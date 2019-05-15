@@ -1,27 +1,33 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Avatar from './components/Avatar'
-import { Constants } from 'expo';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import AuthorRow from "./components/AuthorRow";
+import { Constants } from "expo";
+import Card from "./components/Card";
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Avatar initials={'PL'} size={35} backgroundColor={'teal'} />
+        <Card
+          fullname={'Paul Landaeta'}
+          linkText={'Comments'}
+          onPressLinkText={() => {
+            console.log("Pressed link!");
+          }}
+          image={{ uri: "https://unsplash.it/600/600" }}
+        />
       </View>
     );
   }
 }
 
-
-
 const styles = StyleSheet.create({
   container: {
     marginTop: Constants.statusBarHeight,
     flex: 1,
-    backgroundColor: '#fff',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'stretch'
-  },
+    backgroundColor: "#fff",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "stretch"
+  }
 });
